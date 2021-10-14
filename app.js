@@ -1,4 +1,4 @@
-//Genera un número aleatorio entre un rango de enteros
+//Genera un numero aleatorio entre un rango de enteros
 
 function juegoppt(minimo, maximo) {
   var numero = Math.floor(Math.random() * (maximo - minimo + 1) + minimo);
