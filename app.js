@@ -46,3 +46,29 @@ if (opcionUsuario == piedra) {
 } else {
   alert("No elegiste ninguna opcion o elegiste una incorrecta");
 }
+var tiempo;
+var on = false;
+var seg = 0;
+var min = 0;
+
+var startTime = function () {
+  seg++;
+  tiempo = setTimeout("startTime()", 1000);
+  if (seg > 59) {
+    seg = 0;
+    min++;
+  }
+  document.getElementById("minutos").value = min;
+  document.getElementById("segundos").value = seg;
+};
+
+var stopStart = function () {
+  document.getElementById("tiempo").innerHTML = !on ? "Parar" : "Empezar";
+  if (!on) {
+    on = true;
+    startTime();
+  } else {
+    on = false;
+    clearTimeout(tiempo);
+  }
+};
